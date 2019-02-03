@@ -1,0 +1,8 @@
+# IDE
+.idea
+
+# Dependency stuff
+node_modules
+
+# Artifacts
+dist
