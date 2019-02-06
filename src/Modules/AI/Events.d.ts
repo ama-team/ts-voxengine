@@ -1,18 +1,25 @@
+import './Events/DialogflowError';
+import './Events/DialogflowPlaybackFinished';
+import './Events/DialogflowPlaybackMarkerReached';
+import './Events/DialogflowPlaybackStarted';
+import './Events/DialogflowResponse';
+import './Events/DialogflowStopped';
 import './Events/VoicemailDetected';
+import './Events/VoicemailNotDetected';
 
 export = AI;
 
 declare global {
     export namespace AI {
         export namespace Events {
-            export type DialogflowError = Function;
-            export type DialogflowPlaybackFinished = Function;
-            export type DialogflowPlaybackMarkerReached = Function;
-            export type DialogflowPlaybackStarted = Function;
-            export type DialogflowResponse = Function;
-            export type DialogflowStopped = Function;
-            export type VoicemailDetected = Function;
-            export type VoicemailNotDetected = Function;
+            export type DialogflowError = () => DialogflowError.Event;
+            export type DialogflowPlaybackFinished = () => DialogflowPlaybackFinished.Event;
+            export type DialogflowPlaybackMarkerReached = () => DialogflowPlaybackMarkerReached.Event;
+            export type DialogflowPlaybackStarted = () => DialogflowPlaybackStarted.Event;
+            export type DialogflowResponse = () => DialogflowResponse.Event;
+            export type DialogflowStopped = () => DialogflowStopped.Event;
+            export type VoicemailDetected = () => VoicemailDetected.Event;
+            export type VoicemailNotDetected = () => VoicemailNotDetected.Event;
 
             export const DialogflowError: DialogflowError;
             export const DialogflowPlaybackFinished: DialogflowPlaybackFinished;

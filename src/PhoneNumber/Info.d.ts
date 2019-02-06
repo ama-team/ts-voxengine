@@ -2,22 +2,24 @@ export = PhoneNumber;
 
 declare global {
     export namespace PhoneNumber {
-        type ErrorEnum =
-            'INVALID_COUNTRY_CODE' |
-            'NOT_A_NUMBER' |
-            'TOO_SHORT_AFTER_IDD' |
-            'TOO_SHORT_NSN' |
-            'TOO_LONG_NSN';
+        namespace $Implicit {
+            type ErrorEnum =
+                'INVALID_COUNTRY_CODE' |
+                'NOT_A_NUMBER' |
+                'TOO_SHORT_AFTER_IDD' |
+                'TOO_SHORT_NSN' |
+                'TOO_LONG_NSN';
 
-        type NumberTypeEnum =
-            'FIXED_LINE' |
-            'MOBILE' |
-            'FIXED_LINE_OR_MOBILE' |
-            'TOLL_FREE' |
-            'PREMIUM_RATE' |
-            'SHARED_COST' |
-            'VOIP' |
-            'PROFESSIONAL_NUMBER';
+            type NumberTypeEnum =
+                'FIXED_LINE' |
+                'MOBILE' |
+                'FIXED_LINE_OR_MOBILE' |
+                'TOLL_FREE' |
+                'PREMIUM_RATE' |
+                'SHARED_COST' |
+                'VOIP' |
+                'PROFESSIONAL_NUMBER';
+        }
 
         /**
          * Phone number information.
@@ -33,7 +35,7 @@ declare global {
              * - TOO_SHORT_NSN
              * - TOO_LONG_NSN
              */
-            readonly error: ErrorEnum;
+            readonly error?: $Implicit.ErrorEnum;
             /**
              * Is number possible in specified country (just by analyzing
              * length infomation).
@@ -67,7 +69,7 @@ declare global {
              * - VOICEMAIL
              * - UNKNOWN
              */
-            readonly numberType: NumberTypeEnum;
+            readonly numberType: $Implicit.NumberTypeEnum;
             /**
              * 2-digit country code of specified phone number (ISO 3166-1).
              */

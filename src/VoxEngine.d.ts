@@ -1,6 +1,7 @@
-import './AppEvents';
-import './Call';
 import './VoxEngine/callSIPParameters';
+import './VoxEngine/AnswerParameters';
+import './VoxEngine/TTSOptions';
+import {EventHandler} from './$Implicit/EventHandler';
 
 export = VoxEngine;
 export as namespace VoxEngine;
@@ -22,7 +23,7 @@ declare namespace VoxEngine {
      * @param handler Handler function. A single parameter is passed -
      * object with event information
      */
-    function addEventListener<E>(event: any, handler: (event: E) => void): void;
+    function addEventListener<E>(event: any, handler: EventHandler<E>): void;
 
     /**
      * Make a call to a conference using {@link Conference} module. If
@@ -319,8 +320,8 @@ declare namespace VoxEngine {
      * @param mediaUnit2 Second media unit.
      */
     function sendMediaBetween(
-        mediaUnit1: Call|Conference|ASR|Player|IVR|Recorder,
-        mediaUnit2: Call|Conference|ASR|Player|IVR|Recorder
+        mediaUnit1: $Implicit.MediaUnit.Target,
+        mediaUnit2: $Implicit.MediaUnit.Target
     ): void;
 
     /**
@@ -334,8 +335,8 @@ declare namespace VoxEngine {
      * @param mediaUnit2 Second media unit.
      */
     function stopMediaBetween(
-        mediaUnit1: Call|Conference|ASR|Player|IVR|Recorder,
-        mediaUnit2: Call|Conference|ASR|Player|IVR|Recorder
+        mediaUnit1: $Implicit.MediaUnit.Target,
+        mediaUnit2: $Implicit.MediaUnit.Target
     ): void;
 
     /**

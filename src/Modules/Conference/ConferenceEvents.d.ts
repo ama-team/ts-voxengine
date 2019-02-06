@@ -1,3 +1,9 @@
+import './ConferenceEvents/ConferenceError';
+import './ConferenceEvents/Stopped';
+import './ConferenceEvents/Started';
+import './ConferenceEvents/EndpointRemoved';
+import './ConferenceEvents/EndpointAdded';
+
 export = ConferenceEvents;
 
 declare global {

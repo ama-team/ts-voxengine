@@ -1,13 +1,12 @@
-import './AppEvents';
-import './Call';
-import './CallEvents';
 import './Net';
-import './Crypto';
-import './global';
-import './Language';
-import './Logger';
-import './RecordExpireTime';
-import './VoxEngine';
+import './CallEvents';
 import './PhoneNumber';
-import './Modules/ACD/VoxEngine';
-
+import './Crypto';
+import './Logger';
+import './Call';
+import './Modules';
+import './$';
+import './VoxEngine';
+import './Language';
+import './AppEvents';
+import './RecordExpireTime';

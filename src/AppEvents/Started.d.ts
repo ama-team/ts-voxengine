@@ -1,4 +1,4 @@
-import {EventHandler} from '../Common/EventHandler';
+import {EventHandler} from '../$Implicit/EventHandler';
 
 export = AppEvents;
 

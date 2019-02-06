@@ -1,5 +1,5 @@
 import '../Call';
-import {EventHandler} from '../Common/EventHandler';
+import {EventHandler} from '../$Implicit/EventHandler';
 
 export = AppEvents;
 
@@ -61,7 +61,7 @@ declare global {
                  * {@link Call.answer}, {@link }Call.answerDirect},
                  * {@link Call.startEarlyMedia} methods call.
                  */
-                readonly scheme: object;
+                readonly scheme: any;
 
                 /**
                  * Dialed SIP URI

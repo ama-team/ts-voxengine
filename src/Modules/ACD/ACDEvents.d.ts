@@ -11,13 +11,13 @@ export = ACDEvents;
 declare global {
     export namespace ACDEvents {
         // @ts-ignore
-        export type Error = Function;
-        export type Offline = Function;
-        export type OperatorFailed = Function;
-        export type OperatorReached = Function;
-        export type Queued = Function;
-        export type QueueFull = Function;
-        export type Waiting = Function;
+        export type Error = () => Error.Event;
+        export type Offline = () => Offline.Event;
+        export type OperatorFailed = () => OperatorFailed.Event;
+        export type OperatorReached = () => OperatorReached.Event;
+        export type Queued = () => Queued.Event;
+        export type QueueFull = () => QueueFull.Event;
+        export type Waiting = () => Waiting.Event;
 
         export const Error: Error;
         export const Offline: Offline;

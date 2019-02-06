@@ -1,5 +1,5 @@
-import {ConferenceEvent} from "./Common/ConferenceEvent";
-import {EventHandler} from "../../../Common/EventHandler";
+import {ConferenceEvent} from "./$Implicit/ConferenceEvent";
+import {EventHandler} from "../../../$Implicit/EventHandler";
 
 declare global {
     export namespace ConferenceEvents {
@@ -15,7 +15,7 @@ declare global {
                  * from conference to endpoint; BOTH allows both sending
                  * and receiving.
                  */
-                readonly direction: Conference.Implicit.Direction;
+                readonly direction: Conference.$Implicit.Direction;
 
                 /**
                  * The removed endpoint.
@@ -32,7 +32,7 @@ declare global {
                  * all streams in one, FORWARD mode sends only one
                  * stream.
                  */
-                readonly mode: Conference.Implicit.Mode;
+                readonly mode: Conference.$Implicit.Mode;
             }
 
             export interface Handler extends EventHandler<Event> {}

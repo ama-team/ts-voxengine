@@ -1,4 +1,18 @@
+import './AI/DialogflowTextInput';
+import './AI/DialogflowQueryParameters';
+import './AI/DialogflowOutputAudioConfig';
 import './AI/Events';
+import './AI/DialogflowResponse';
+import './AI/DialogflowLanguage';
+import './AI/DialogflowResult';
+import './AI/DialogflowSynthesizeSpeechConfig';
+import './AI/DialogflowInstance';
+import './AI/DialogflowEventInput';
+import './AI/DialogflowQueryInput';
+import './AI/DialogflowSettings';
+import './AI/DialogflowVoiceSelectionParams';
+import './AI/DialogflowSsmlVoiceGender';
+import './AI/DialogflowStreamingRecognitionResult';
 
 export = AI;
 

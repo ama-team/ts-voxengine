@@ -14,7 +14,7 @@ declare global {
             /**
              * Optional SMTP server error message.
              */
-            readonly error: string;
+            readonly error?: string;
         }
     }
 }

@@ -1,5 +1,5 @@
-import {ConferenceEvent} from "./Common/ConferenceEvent";
-import {EventHandler} from "../../../Common/EventHandler";
+import {ConferenceEvent} from "./$Implicit/ConferenceEvent";
+import {EventHandler} from "../../../$Implicit/EventHandler";
 
 export = ConferenceEvents;
 

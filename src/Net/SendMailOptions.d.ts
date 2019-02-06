@@ -5,36 +5,36 @@ declare global {
         /**
          * Advanced options for sendMail method.
          */
-        export class SendMailOptions {
+        export interface SendMailOptions {
             /**
              * CC addresses.
              */
-            public cc: string | string[];
+            cc?: string | string[];
 
             /**
              * BCC addresses.
              */
-            public bcc: string | string[];
+            bcc?: string | string[];
 
             /**
              * Alternative HTML body.
              */
-            public html: string;
+            html?: string;
 
             /**
              * Login for mail server.
              */
-            public login: string;
+            login?: string;
 
             /**
              * Password for mail server.
              */
-            public password: string;
+            password?: string;
 
             /**
              * Mail server port.
              */
-            public port: number;
+            port?: number;
         }
     }
 }

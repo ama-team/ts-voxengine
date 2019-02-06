@@ -1,16 +1,18 @@
-import './AppEvents/CallAlerting';
-import './AppEvents/HttpRequest';
+import './AppEvents/Terminated';
 import './AppEvents/Started';
+import './AppEvents/CallAlerting';
+import './AppEvents/Terminating';
+import './AppEvents/HttpRequest';
 
 export = AppEvents;
 
 declare global {
     export namespace AppEvents {
-        export type CallAlerting = 'AppEvents.CallAlerting';
-        export type HttpRequest = 'AppEvents.HttpRequest';
-        export type Started = 'AppEvents.Started';
-        export type Terminating = 'AppEvents.Terminating';
-        export type Terminated = 'AppEvents.Terminated';
+        export type CallAlerting = () => CallAlerting.Event;
+        export type HttpRequest = () => HttpRequest.Event;
+        export type Started = () => Started.Event;
+        export type Terminating = () => Terminating.Event;
+        export type Terminated = () => Terminated.Event;
 
         /**
          * Event is triggered when an incoming call arrives. Since each
@@ -66,22 +68,6 @@ declare global {
          * handler.
          */
         export const Terminated: Terminated;
-
-        export namespace Terminating {
-            export interface Event {}
-
-            export interface Handler {
-                (event: Event): void;
-            }
-        }
-
-        export namespace Terminated {
-            export interface Event {}
-
-            export interface Handler {
-                (event: Event): void;
-            }
-        }
     }
 
     export type AppEvents =

@@ -1,5 +1,4 @@
 import {NamedEvent} from './NamedEvent';
-import '../../Call';
 
 export interface CallEvent<N extends string> extends NamedEvent<N> {
     /**

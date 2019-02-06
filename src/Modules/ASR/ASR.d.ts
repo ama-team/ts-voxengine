@@ -1,3 +1,5 @@
+import {EventHandler} from '../../$Implicit/EventHandler';
+
 export = ASR;
 
 declare global {
@@ -19,7 +21,7 @@ declare global {
          * @param handler Handler function. A single parameter is passed
          * - object with event information.
          */
-        addEventListener<E>(event: E, handler: (event: E) => void): void;
+        addEventListener<E>(event: any, handler: EventHandler<E>): void;
 
         removeEventListener(event: ASREvents.ASRError, handler?: ASREvents.ASRError.Handler): void;
         removeEventListener(event: ASREvents.CaptureStarted, handler?: ASREvents.CaptureStarted.Handler): void;

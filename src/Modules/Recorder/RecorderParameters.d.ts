@@ -1,5 +1,3 @@
-import '../RecordExpireTime';
-
 export = VoxEngine;
 
 declare global {
@@ -7,11 +5,11 @@ declare global {
         /**
          * Recorder parameters. The parameters can be passed as arguments either
          * to the {@link Call#record} method or to the
-         * {@link Recorder.createRecorder} method of {@link Recorder} module.
+         * {@link VoxEngine.createRecorder} method of {@link Recorder} module.
          * There are differences between using the parameters in these methods,
          * see the details in the parameters descriptions.
          */
-        export class RecorderParameters {
+        export interface RecorderParameters {
             /**
              * Transcription dictionary. Array of words are possible values.
              * Note that dict does not limit the transcription to the specific
@@ -20,20 +18,20 @@ declare global {
              * {@link Recorder} module because the transcription isn't available
              * for it.
              */
-            public dict?: string[];
+            dict?: string[];
 
             /**
              * Storage time for recorded files. The default value is 3 months;
              * see possible values in the {@link RecordExpireTime} list.
              */
-            public expire?: RecordExpireTime;
+            expire?: RecordExpireTime;
 
             /**
              * Transcription format. Could be specified as "json". In that case
              * the transcription result will be saved in JSON format. The
              * parameter isn't available for the {@link Recorder} module.
              */
-            public format?: string;
+            format?: string;
 
             /**
              * If set to false (default), 8 KHz / 32 kbps mp3 file will be
@@ -42,7 +40,7 @@ declare global {
              * depend on this parameter. The property is not compatible with
              * `lossless: true` property.
              */
-            public hd_audio?: boolean;
+            hd_audio?: boolean;
 
             /**
              * An array of two strings. Each string names the label in resulting
@@ -54,7 +52,7 @@ declare global {
              * parameter requires the `transcribe: true parameter`. The
              * parameter isn't available for the {@link Recorder} module.
              */
-            public labels?: [string, string];
+            labels?: [string, string];
 
             /**
              * Transcription language. The parameter uses {@link ASRDictionary}
@@ -63,25 +61,25 @@ declare global {
              * language Constants. The parameter isn't available for the
              * {@link Recorder} module.
              */
-            public language?: string;
+            language?: string;
 
             /**
              * False by default. If it is true, the record will be saved in FLAC
              * format. The property is not compatible with `hd_audio: true`
              * property.
              */
-            public lossless?: boolean;
+            lossless?: boolean;
 
             /**
              * Name of the recorder. It can be seen in the call history.
              */
-            public name?: string;
+            name?: string;
 
             /**
              * Restrict access to the record without HTTP API authorization
              * (available only in {@link VoxEngine.createRecorder)}.
              */
-            public secure?: boolean;
+            secure?: boolean;
 
             /**
              * False by default. The parameter doesn't change anything for the
@@ -93,14 +91,14 @@ declare global {
              * channel. Audio stream from voximplant cloud to a call endpoint
              * will be recorded into left channel.
              */
-            public stereo?: boolean;
+            stereo?: boolean;
 
             /**
              * Create the call record transcription. Note that transcription
              * isn't available for the {@link Recorder} module. See the details
              * in the {@link https://voximplant.com/blog/speech-to-text-transcription/|article}.
              */
-            public transcribe?: boolean;
+            transcribe?: boolean;
 
             /**
              * Minimum length, in seconds, of a recording to transcribe. 0 to
@@ -108,7 +106,7 @@ declare global {
              * recordings that are too short to be meaningful. The parameter
              * isn't available for the {@link Recorder} module.
              */
-            public transcriptionThreshold?: boolean;
+            transcriptionThreshold?: boolean;
 
             /**
              * False by default. For video recording use the
@@ -116,7 +114,7 @@ declare global {
              * isn't available for the {@link Recorder} module because it could
              * only record an audio.
              */
-            public video?: boolean;
+            video?: boolean;
         }
     }
 }

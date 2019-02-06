@@ -13,6 +13,6 @@ declare global {
          * for more details see the
          * {@link https://voximplant.com/pricing/|pricing page}.
          */
-        hd_audio: boolean;
+        hd_audio?: boolean;
     }
 }

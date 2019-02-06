@@ -1,7 +1,9 @@
+import {EventHandler} from '../../$Implicit/EventHandler';
+
 export = Conference;
 
 declare global {
-    export interface Conference {
+    export interface Conference extends VoxEngine.$Implicit.MediaUnit.Source {
         /**
          * Create new endpoint and add it to the specified conference.
          * Important! You can only use this function for a Standalone
@@ -31,7 +33,7 @@ declare global {
          * @param handler Handler function. A single parameter is
          * passed - object with event information.
          */
-        addEventListener<E>(event: () => E | any, handler: (event: E) => {}): void;
+        addEventListener<E>(event: any, handler: EventHandler<E>): void;
 
         /**
          * Get endpoint by the id.
@@ -60,29 +62,12 @@ declare global {
          * @param handler Handler function. If not specified, all event
          * listeners are removed.
          */
-        removeEventListener<E>(event: () => E | any, handler?: (event: E) => {}): void;
-
-        /**
-         * Start sending media (voice and video) from this conference to
-         * media unit specified in targetMediaUnit.
-         *
-         * @param targetMediaUnit Media unit that will receive media.
-         */
-        sendMediaTo(targetMediaUnit: Call | Conference): void;
+        removeEventListener<E>(event: any, handler?: EventHandler<E>): void;
 
         /**
          * Stop the conference. Triggers the
          * {@link ConferenceEvents.Stopped} event.
          */
         stop(): void;
-
-        /**
-         * Stop sending media (voice and video) from this conference to
-         * media unit specified in targetMediaUnit.
-         *
-         * @param targetMediaUnit Media unit that will not receive media
-         * from this conference anymore.
-         */
-        stopMediaTo(targetMediaUnit: Call | Conference);
     }
 }

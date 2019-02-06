@@ -15,7 +15,7 @@ declare global {
          * `RECEIVE` provides only receiving stream from conference to
          * endpoint; `BOTH` allows both sending and receiving.
          */
-        direction: Conference.Implicit.Direction;
+        direction: Conference.$Implicit.Direction;
         /**
          * Endpoint's displayName.
          */
@@ -24,10 +24,10 @@ declare global {
          * Possible values are: `MIX` | `FORWARD`. `MIX` mode combines
          * all streams in one, FORWARD mode sends only one stream.
          */
-        mode: Conference.Implicit.Mode;
+        mode: Conference.$Implicit.Mode;
         /**
          * Required. Internal information about codecs.
          */
-        scheme: object;
+        scheme: any;
     }
 }

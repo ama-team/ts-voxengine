@@ -10,12 +10,12 @@ declare global {
         /**
          * Returns direction value.
          */
-        getDirection(): Conference.Implicit.Direction;
+        getDirection(): Conference.$Implicit.Direction;
 
         /**
          * Returns mode value.
          */
-        getMode(): Conference.Implicit.Mode;
+        getMode(): Conference.$Implicit.Mode;
 
         /**
          * Returns endpoint id.

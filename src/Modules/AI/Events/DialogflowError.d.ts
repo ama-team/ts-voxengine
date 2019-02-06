@@ -1,5 +1,5 @@
-import {DialogflowEvent} from './Common/DialogflowEvent';
-import {EventHandler} from '../../../Common/EventHandler';
+import {DialogflowEvent} from './$Implicit/DialogflowEvent';
+import {EventHandler} from '../../../$Implicit/EventHandler';
 
 export = AI;
 

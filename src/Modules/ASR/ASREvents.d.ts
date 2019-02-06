@@ -1,14 +1,22 @@
+import './ASREvents/ASRError';
+import './ASREvents/Stopped';
+import './ASREvents/CaptureStarted';
+import './ASREvents/Started';
+import './ASREvents/InterimResult';
+import './ASREvents/SpeechCaptured';
+import './ASREvents/Result';
+
 export = ASREvents;
 
 declare global {
     export namespace ASREvents {
-        export type ASRError = Function;
-        export type CaptureStarted = Function;
-        export type InterimResult = Function;
-        export type Result = Function;
-        export type SpeechCaptured = Function;
-        export type Started = Function;
-        export type Stopped = Function;
+        export type ASRError = () => ASRError.Event;
+        export type CaptureStarted = () => CaptureStarted.Event;
+        export type InterimResult = () => InterimResult.Event;
+        export type Result = () => Result.Event;
+        export type SpeechCaptured = () => SpeechCaptured.Event;
+        export type Started = () => Started.Event;
+        export type Stopped = () => Stopped.Event;
 
         export const ASRError: ASRError;
         export const CaptureStarted: CaptureStarted;

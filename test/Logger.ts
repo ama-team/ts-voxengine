@@ -1,0 +1,1 @@
+Logger.write('anything!');

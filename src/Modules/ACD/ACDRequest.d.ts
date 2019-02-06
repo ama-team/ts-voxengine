@@ -1,4 +1,5 @@
 import './ACDEvents'
+import {EventHandler} from '../../$Implicit/EventHandler';
 
 export = ACDRequest;
 
@@ -19,7 +20,7 @@ declare global {
          * @param handler Handler function. A single parameter is
          * passed - object with event information.
          */
-        addEventListener<E>(event: any, handler: (event: E) => void): void;
+        addEventListener<E>(event: any, handler: EventHandler<E>): void;
 
         /**
          * Cancel pending request and remove it from queue.

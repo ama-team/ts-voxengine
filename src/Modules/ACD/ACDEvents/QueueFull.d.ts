@@ -1,5 +1,5 @@
-import {ACDRequestEvent} from './Common/ACDRequestEvent';
-import {EventHandler} from '../../../Common/EventHandler';
+import {ACDRequestEvent} from './$Implicit/ACDRequestEvent';
+import {EventHandler} from '../../../$Implicit/EventHandler';
 
 export = ACDEvents;
 

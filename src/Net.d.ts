@@ -1,12 +1,20 @@
+import './Net/SendMailResult';
 import './Net/HttpRequestResult';
 import './Net/HttpRequestOptions';
-import './Net/SendMailResult';
 import './Net/SendMailOptions';
+
+export = Net;
 
 declare global {
     export namespace Net {
-        interface HttpRequestCallback {
-            (result: HttpRequestResult): void;
+        namespace $Implicit {
+            interface HttpRequestCallback {
+                (result: HttpRequestResult): void;
+            }
+
+            interface MailSendCallback {
+                (result: SendMailResult): void;
+            }
         }
 
         /**
@@ -21,7 +29,7 @@ declare global {
          * {@link HttpRequestResult} as a first argument.
          * @param options Advanced settings.
          */
-        export function httpRequest(url: string, callback?: HttpRequestCallback, options?: HttpRequestOptions): void;
+        export function httpRequest(url: string, callback?: $Implicit.HttpRequestCallback, options?: HttpRequestOptions): void;
 
         /**
          * Performs an asynchronous HTTP request, i.e., the method returns
@@ -35,10 +43,6 @@ declare global {
          * @param options Advanced settings.
          */
         export function httpRequestAsync(url: string, options?: HttpRequestOptions): Promise<HttpRequestResult>;
-
-        interface MailSendCallback {
-            (result: SendMailResult): void;
-        }
 
         /**
          * Send e-mail using specified e-mail server.
@@ -57,8 +61,8 @@ declare global {
             to: string,
             title: string,
             body: string,
-            callback: MailSendCallback,
-            options: SendMailOptions
+            callback: $Implicit.MailSendCallback,
+            options?: SendMailOptions
         ): void;
 
         /**
@@ -77,7 +81,7 @@ declare global {
             to: string | string[],
             title: string,
             body: string,
-            options: SendMailOptions
+            options?: SendMailOptions
         ): Promise<SendMailResult>;
     }
 }

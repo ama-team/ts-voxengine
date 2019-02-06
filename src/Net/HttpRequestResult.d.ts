@@ -2,10 +2,13 @@ export = Net;
 
 declare global {
     export namespace Net {
-        interface HttpHeader {
-            readonly key: string;
-            readonly value: string;
+        namespace $Implicit {
+            interface HttpHeader {
+                readonly key: string;
+                readonly value: string;
+            }
         }
+
         /**
          * HTTP response.
          */
@@ -44,7 +47,7 @@ declare global {
              * List of dictionaries with key and value fields representing HTTP
              * headers returned by the remote server.
              */
-            readonly headers: HttpHeader[];
+            readonly headers: $Implicit.HttpHeader[];
 
             /**
              * HTTP headers string returned by the remote server, without

@@ -1,5 +1,5 @@
-import {ASREvent} from './Common/ASREvent';
-import {EventHandler} from '../../../Common/EventHandler';
+import {ASREvent} from './$Implicit/ASREvent';
+import {EventHandler} from '../../../$Implicit/EventHandler';
 
 declare global {
     export namespace ASREvents {

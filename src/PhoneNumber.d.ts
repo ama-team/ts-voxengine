@@ -1,5 +1,7 @@
 import './PhoneNumber/Info';
 
+export = PhoneNumber;
+
 declare global {
     export namespace PhoneNumber {
         /**

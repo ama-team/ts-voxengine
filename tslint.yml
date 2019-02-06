@@ -1,0 +1,24 @@
+defaultSeverity: warning
+extends:
+  - tslint:all
+rules:
+  callable-types: false
+  file-name-casing: false
+  interface-name: false
+  quotemark: [true, single]
+  ordered-imports: true
+  whitespace:
+    options:
+      - check-branch
+      - check-decl
+      - check-operator
+      - check-separator
+      - check-rest-spread
+      - check-type
+      - check-typecast
+      - check-type-operator
+      - check-preblock
+rulesDirectory: []
+linterOptions:
+  exclude:
+    - test/**

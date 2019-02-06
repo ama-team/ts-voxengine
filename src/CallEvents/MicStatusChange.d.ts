@@ -1,5 +1,5 @@
-import {CallEvent} from './Common/CallEvent';
-import {EventHandler} from '../Common/EventHandler';
+import {CallEvent} from './$Implicit/CallEvent';
+import {EventHandler} from '../$Implicit/EventHandler';
 
 export = CallEvents;
 

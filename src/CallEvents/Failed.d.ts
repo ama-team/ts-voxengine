@@ -1,5 +1,5 @@
-import {SipEvent} from './Common/SipEvent';
-import {EventHandler} from '../Common/EventHandler';
+import {SipEvent} from './$Implicit/SipEvent';
+import {EventHandler} from '../$Implicit/EventHandler';
 
 export = CallEvents;
 
