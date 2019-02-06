@@ -1,0 +1,32 @@
+version: '2.1'
+
+jobs:
+  validate:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn tsc
+      - run: yarn tslint --project .
+  publish:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run: yarn publish --access public
+
+workflows:
+  version: '2.1'
+  default:
+    jobs:
+      - validate
+      - publish:
+          requires:
+            - validate
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
+          context: npm
