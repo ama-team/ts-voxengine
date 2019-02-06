@@ -1,0 +1,7 @@
+.idea
+.circleci
+dist
+node_modules
+test
+tslint.yml
+yarn.lock
