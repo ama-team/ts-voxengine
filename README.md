@@ -10,6 +10,22 @@ This project supersedes [@ama-team/voxengine-definitions](https://github.com/ama
 yarn add -D @ama-team/voxengine-typings
 ```
 
+## Usage
+
+You have to tell TypeScript where new types live at, usually you just
+add a new root in `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/@ama-team"
+    ]
+  }
+}
+```
+
 ## Conventions
 
 - All definitions are stored inside files with corresponding names (e.g.

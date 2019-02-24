@@ -14,17 +14,22 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
-      - run: |
-          if [[ ! -z "$(git describe --exact-match HEAD)" ]]; then
-            yarn publish --access public
-          fi
+      - run: yarn publish --access public
 
 workflows:
   version: '2.1'
   default:
     jobs:
-      - validate
+      - validate:
+          filters:
+            tags:
+              only: /.*/
       - publish:
           requires:
             - validate
           context: npm
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/

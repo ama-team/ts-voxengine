@@ -180,7 +180,7 @@ declare namespace VoxEngine {
      * @param data Custom session data to set. Maximum size is 200
      * bytes.
      */
-    function customData(data: string): string;
+    function customData(data?: string): string;
 
     /**
      * Adds all default event listeners to pass signaling information
