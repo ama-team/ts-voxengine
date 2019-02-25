@@ -1,6 +1,6 @@
 {
   "name": "@ama-team/voxengine-typings",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "VoxEngine typings",
   "main": "src/index.d.ts",
   "types": "src/index.d.ts",

@@ -321,7 +321,7 @@ declare global {
          * used to control aspects of speech such as pronunciation, volume,
          * pitch, rate, etc.
          */
-        say(text: string, language?: string, ttsoptions?: VoxEngine.TTSOptions): void;
+        say(text: string, language?: Language, ttsoptions?: VoxEngine.TTSOptions): void;
 
         /**
          * Send DTMF digits to the remote peer.
