@@ -387,9 +387,21 @@ declare global {
          * the first playing. Supported formats are: mp3, ogg & flac (mp3,
          * speex, vorbis and flac codecs respectively). Maximum file size is
          * 2 MBytes.
-         * @param loop If it's true, playback will be looped.
+         * @param options Playback parameters: loop, progressive playback,
+         * etc.
          */
-        startPlayback(url: string, loop: boolean): void;
+        startPlayback(url: string, options: {
+            /**
+             * If it's true, playback will be looped.
+             */
+            loop: boolean; 
+            /**
+             * Use progressive playback or not. If true, the file will be 
+             * delivered in chunks which reduces delay before a method call 
+             * and playback. It's false by default.
+            */
+            progressivePlayback: boolean;
+        }): void;
 
         /**
          * Returns current state of the call. Possible values are:

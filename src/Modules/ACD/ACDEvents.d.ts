@@ -2,6 +2,7 @@ import './ACDEvents/Error';
 import './ACDEvents/Offline';
 import './ACDEvents/OperatorFailed';
 import './ACDEvents/OperatorReached';
+import './ACDEvents/OperatorCallAttempt';
 import './ACDEvents/Queued';
 import './ACDEvents/QueueFull';
 import './ACDEvents/Waiting';
@@ -15,6 +16,7 @@ declare global {
         export type Offline = () => Offline.Event;
         export type OperatorFailed = () => OperatorFailed.Event;
         export type OperatorReached = () => OperatorReached.Event;
+        export type OperatorCallAttempt = () => OperatorCallAttempt.Event;
         export type Queued = () => Queued.Event;
         export type QueueFull = () => QueueFull.Event;
         export type Waiting = () => Waiting.Event;
@@ -23,6 +25,7 @@ declare global {
         export const Offline: Offline;
         export const OperatorFailed: OperatorFailed;
         export const OperatorReached: OperatorReached;
+        export const OperatorCallAttempt: OperatorCallAttempt;
         export const Queued: Queued;
         export const QueueFull: QueueFull;
         export const Waiting: Waiting;
@@ -33,6 +36,7 @@ declare global {
         ACDEvents.Offline |
         ACDEvents.OperatorFailed |
         ACDEvents.OperatorReached |
+        ACDEvents.OperatorCallAttempt |
         ACDEvents.Queued |
         ACDEvents.QueueFull |
         ACDEvents.Waiting;
